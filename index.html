@@ -14,50 +14,67 @@
     
     <div class="container">
         <h1>REGISTRATION</h1>
-        <!-- <form> -->
+        <form id="register" name="register">
             <div>
 
                 <label>User Name :</label>
-                <input type="text" placeholder="ENTER YOUR NAME" id="uname">
+                <input name="user" type="text" placeholder="ENTER YOUR NAME" id="uname">
 
             </div>
+            <!-- <div>
+
+                <label id="nameerr">ENTER A VALID NAME</label>
+
+            </div> -->
             <div>
 
                 <label>Your Age :</label>
-                <input type="number" placeholder="ENTER YOUR AGE" id="uage">
-
+                <input name="age" type="text" placeholder="ENTER YOUR AGE" id="uage">
+            
             </div>
+            <!-- <div>
+
+                <label id="ageerr">ENTER VALID AGE</label>
+
+            </div> -->
             <div>
 
                 <label>Mobile Number :</label>
-                <input type="text" placeholder="ENTER YOUR MOBILE" id="umob">
+                <input name="mob" type="text" placeholder="ENTER YOUR MOBILE" id="umob">
 
             </div>
+            <!-- <div>
+   
+                <label id="moberr">ENTER VALID MOBILE NUMBER</label>
+
+            </div> -->
             <div>
 
                 <label>Enter Mail ID :</label>
-                <input type="email" placeholder="ENTER YOUR MAIL ID" id="umail">
+                <input name="email" type="email" placeholder="ENTER YOUR MAIL ID" id="umail">
 
             </div>
+            <!-- <div>
+
+                <label id="mailerr">ENTER VALID MAIL ID</label>
+
+            </div> -->
             <div>
 
                 <label>Enter Password :</label>
-                <input type="password" placeholder="ENTER PASSWORD" id="upass">
+                <input name="pass" type="password" placeholder="ENTER PASSWORD" id="upass">
 
             </div>
             <div>
 
                 <label>Confirm Password :</label>
-                <input type="password" placeholder="CONFIRM PASSWORD" id="ucpass">
+                <input name="passw" type="password" placeholder="CONFIRM PASSWORD" id="ucpass">
 
             </div>
-            <div>
+            <div name="gender">
 
                 <input type="radio" name="gender">
-                <label>Male </label>
-
-            </div>
-            <div>
+                <label>Male </label> &nbsp;
 
                 <input type="radio" name="gender">
                 <label>Female </label>
@@ -65,12 +82,72 @@
             </div>
             <div>
 
-                <input type="submit">
+                <button type="submit" class="btn btn-primary" id="btn">REGISTER</button>
 
             </div>
-        <!-- </form> -->
+        </form>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#register").validate({
+                rules: {
+                    user:{
+                        required: true
+                    },
+                    age:{
+                        required: true,
+                        number: true
+                    },
+                    mob:{
+                        required: true,
+                        number: true
+                    },
+                    email:{
+                        required: true,
+                        email: true
+                    },
+                    pass:{
+                        required: true,
+                        minlength: 8
+                    },
+                    passw:{
+                        required: true,
+                        minlength: 8,
+                        equalTo:"#upass"
+
+                    }
+                }
+                // ,
+                // messages:{
+                //     user:{
+                //         required:"Enter Username"
+                //     },
+                //     age:{
+                //         required:"Enter Your Age"
+                //     },
+                //     mob:{
+                //         required:"Enter Mobile Number"
+                //     },
+                //     email:{
+                //         required:"Enter Valid Email"
+                //     }
+                // }
+            })
+            // if($("#umob").val.length!=10){
+            //     $("#moberr").show
+            // }
+            // $("#btn").click(function(){
+
+            //     alert("SUCCESS")
+            // })
+
+
+                    
+        })
+    </script>
+    
 </body>
 </html>
