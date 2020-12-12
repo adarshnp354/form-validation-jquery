@@ -4,3 +4,15 @@
 div{
     padding-top: 2%;
 }
+#nameerr{
+    display: none;
+}
+#ageerr{
+    display: none;
+}
+#moberr{
+    display: none;
+}
+#mailerr{
+    display: none;
+}
