@@ -114,13 +114,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
     <script>
         $(document).ready(function(){
-            $('#uname').keyup(function () { 
-                        this.value = this.value.replace(/[^0-9\.]/g,'');
-                    })
             $("#register").validate({
                 rules: {
                     user:{
-                        required: true,
+                        required: true
                         },
                     age:{
                         required: true,
@@ -147,46 +144,53 @@
                         equalTo:"#upass"
 
                     }
+                },
+                messages:{
+                    user:{
+                        required:"Enter Username",
+                        number: "Check Your Name"
+                    },
+                    age:{
+                        required:"Enter Your Age",
+                        maxlength:"Please Check Your Age"
+                    },
+                    mob:{
+                        required:"Enter Mobile Number"
+                    },
+                    email:{
+                        required:"Enter Valid Email"
+                    },
+                    pass:{
+                        required:"Enter Your Password"
+                    },
+                    passw:{
+                        required:"Enter Password Again",
+                        equalTo: "Enter Same Password"
+                    }
                 }
-                // ,
-                // messages:{
-                //     user:{
-                //         required:"Enter Username"
-                //     },
-                //     age:{
-                //         required:"Enter Valid Age"
-                //     }
-                //     mob:{
-                //         required:"Enter Mobile Number"
-                //     },
-                //     email:{
-                //         required:"Enter Valid Email"
-                //     }
-                // }
             })
             // $(function(){
             // $("#uname").lettersOnly();
             // })
+            // $("#btn").click(function(){
+            //     alert("Resgistration Sucessfull")
+            // })
+       
+            var test= $("#uname").val
+            var letters = /^[A-Za-z]+$/;
             $("#btn").click(function(){
-                alert("Resgistration Sucessfull")
+                if(test.val==letters)
+                {
+                alert('Your name have accepted : you can try another');
+                return true;
+                }
+                else
+                {
+                alert('Please input alphabet characters only');
+                return false;
+                }
             })
-        });
-            
-        
-        //     function allLetter(inputtxt)
-        // { 
-        // var letters = /^[A-Za-z]+$/;
-        // if(inputtxt.value.match(letters))
-        // {
-        // alert('Your name have accepted : you can try another');
-        // return true;
-        // }
-        // else
-        // {
-        // alert('Please input alphabet characters only');
-        // return false;
-        // }
-        // }
+        }); 
         
     
                 
