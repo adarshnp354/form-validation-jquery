@@ -19,6 +19,7 @@
 
                 <label>User Name :</label>
                 <input name="user" type="text" placeholder="ENTER YOUR NAME" id="uname">
+                <p id="nameerr"></p>
 
             </div>
             <!-- <div>
@@ -95,15 +96,17 @@
             $("#register").validate({
                 rules: {
                     user:{
-                        required: true
-                    },
+                        required: true,
+                        },
                     age:{
                         required: true,
                         number: true
                     },
                     mob:{
                         required: true,
-                        number: true
+                        number: true,
+		                minlength: 10,
+		                smaxlength: 10
                     },
                     email:{
                         required: true,
@@ -143,10 +146,11 @@
 
             //     alert("SUCCESS")
             // })
-
-
-                    
+            
         })
+    
+                
+                 
     </script>
     
 </body>
