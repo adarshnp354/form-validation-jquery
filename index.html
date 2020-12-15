@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="index.css">
-
-
 </head>
 <body>
     
@@ -18,7 +16,7 @@
             <div>
 
                 <label>User Name :</label>
-                <input name="user" type="text" placeholder="ENTER YOUR NAME" id="uname"></p>
+                <input name="user" type="text" placeholder="ENTER YOUR NAME" id="uname">
 
             </div>
             <!-- <div>
@@ -72,12 +70,36 @@
 
             </div>
             <div name="gender">
+                <label>Gender:</label>
 
                 <input type="radio" name="gender">
                 <label>Male </label> &nbsp;
 
                 <input type="radio" name="gender">
                 <label>Female </label>
+
+            </div>
+            <div>
+                <label>Skills:</label>
+
+                <input type="checkbox">
+                <label>Skill 1 </label> &nbsp;
+
+           
+
+                <input type="checkbox">
+                <label>Skill 2 </label>
+
+            </div>
+            <div>
+
+                <input type="checkbox">
+                <label>Skill 3 </label> &nbsp;
+
+            
+
+                <input type="checkbox">
+                <label>Skill 4 </label>
 
             </div>
             <div>
@@ -90,11 +112,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script></script>
-    <script src="src/jquery-key-restrictions.js"></script>
     <script>
         $(document).ready(function(){
-            
+            $('#uname').keyup(function () { 
+                        this.value = this.value.replace(/[^0-9\.]/g,'');
+                    })
             $("#register").validate({
                 rules: {
                     user:{
@@ -142,11 +164,30 @@
                 //     }
                 // }
             })
-            $(function(){
-            $("#uname").lettersOnly();
-            });
+            // $(function(){
+            // $("#uname").lettersOnly();
+            // })
+            $("#btn").click(function(){
+                alert("Resgistration Sucessfull")
+            })
+        });
             
-        })
+        
+        //     function allLetter(inputtxt)
+        // { 
+        // var letters = /^[A-Za-z]+$/;
+        // if(inputtxt.value.match(letters))
+        // {
+        // alert('Your name have accepted : you can try another');
+        // return true;
+        // }
+        // else
+        // {
+        // alert('Please input alphabet characters only');
+        // return false;
+        // }
+        // }
+        
     
                 
                  
