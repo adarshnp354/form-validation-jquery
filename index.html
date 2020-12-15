@@ -121,7 +121,7 @@
                 rules: {
                     user:{
                         required: true,
-                        lettersOnly: true
+                        minlength: 3
                     },
                     age:{
                         required: true,
@@ -151,7 +151,8 @@
                 },
                 messages:{
                     user:{
-                        required:"Enter Username"
+                        required:"Enter Username",
+                        minlength:"Check Your Name"
                     },
                     age:{
                         required:"Enter Your Age",
