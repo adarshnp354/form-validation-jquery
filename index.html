@@ -18,8 +18,7 @@
             <div>
 
                 <label>User Name :</label>
-                <input name="user" type="text" placeholder="ENTER YOUR NAME" id="uname">
-                <p id="nameerr"></p>
+                <input name="user" type="text" placeholder="ENTER YOUR NAME" id="uname"></p>
 
             </div>
             <!-- <div>
@@ -91,8 +90,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script></script>
+    <script src="src/jquery-key-restrictions.js"></script>
     <script>
         $(document).ready(function(){
+            
             $("#register").validate({
                 rules: {
                     user:{
@@ -100,13 +102,14 @@
                         },
                     age:{
                         required: true,
-                        number: true
+                        number: true,
+                        maxlength:2
                     },
                     mob:{
                         required: true,
                         number: true,
 		                minlength: 10,
-		                smaxlength: 10
+		                maxlength: 10
                     },
                     email:{
                         required: true,
@@ -129,8 +132,8 @@
                 //         required:"Enter Username"
                 //     },
                 //     age:{
-                //         required:"Enter Your Age"
-                //     },
+                //         required:"Enter Valid Age"
+                //     }
                 //     mob:{
                 //         required:"Enter Mobile Number"
                 //     },
@@ -139,13 +142,9 @@
                 //     }
                 // }
             })
-            // if($("#umob").val.length!=10){
-            //     $("#moberr").show
-            // }
-            // $("#btn").click(function(){
-
-            //     alert("SUCCESS")
-            // })
+            $(function(){
+            $("#uname").lettersOnly();
+            });
             
         })
     
