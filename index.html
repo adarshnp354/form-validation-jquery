@@ -88,7 +88,7 @@
             </div>
             <div>
 
-                <button type="submit" class="btn btn-primary" id="btn">REGISTER</button>
+                <input type="submit" class="btn btn-primary" id="btn"></input>
 
             </div>
         </form>
@@ -98,6 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
     <script>
         $(document).ready(function(){
+            
             jQuery.validator.addMethod("lettersonly", function(value, element) {
             return this.optional(element) || /^[a-z]+$/i.test(value);
             }, "Numbers Not Allowed"); 
@@ -158,14 +159,30 @@
                     }
                 }
             })
+
+
+
+
+            
+            $("#register").submit(function(){
+        
+                if(!validate()) {
+                alert('Please correct the errors in the form!');
+                    return false;
+                }else {
+                alert('Do you really want to submit the form?');
+                return true;
+                }
+
+            })
             
        
         
+
+
         }); 
 
-        $("#btn").click(function(){
-                alert("Resgistration Sucessfull")
-            })
+       
         
     
                 
